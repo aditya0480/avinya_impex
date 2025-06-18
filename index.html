@@ -46,10 +46,10 @@
       <nav id="menu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <!-- <li><a href="shop.html">Shop</a></li>
+          <li><a href="shop.html">Shop</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li> -->
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <header class="header-style-1">
@@ -62,10 +62,10 @@
               <nav>
                 <ul class="menu hidden-xs">
                   <li><a href="index.html">Home</a></li>
-                  <!-- <li><a href="shop.html">Shop</a></li>
+                  <li><a href="shop.html">Shop</a></li>
                   <li><a href="about.html">About</a></li>
                   <li><a href="blog.html">Blog</a></li>
-                  <li><a href="contact.html">Contact</a></li> -->
+                  <li><a href="contact.html">Contact</a></li>
                 </ul>
               </nav>
               <aside class="right">
@@ -94,43 +94,124 @@
         <div class="container">
           <div class="row">
             <div class="product-category-grid-style-1">
-              <div class="row">
-                <div class="col-sm-4">
-                  <a href="#">
-                    <figure class="product-category-item">
-                      <div class="thumbnail">
-                        <img src="images/category-product/1.jpg" alt="" />
-                      </div>
-                      <figcaption>
-                        <h3>Vegetable</h3>
-                      </figcaption>
-                    </figure>
-                  </a>
+                <div class="row">
+                <div class="product-category-marquee">
+                  <div class="marquee-content" >
+                    <div class="col-sm-4">
+                      <a href="#">
+                        <figure class="product-category-item">
+                          <div class="thumbnail">
+                            <img src="images/category-product/1.jpg" alt="" />
+                          </div>
+                          <figcaption>
+                            <h3>Vegetable</h3>
+                          </figcaption>
+                        </figure>
+                      </a>
+                    </div>
+                    <div class="col-sm-4">
+                      <a href="#">
+                        <figure class="product-category-item">
+                          <div class="thumbnail">
+                            <img src="images/category-product/2.jpg" alt="" />
+                          </div>
+                          <figcaption>
+                            <h3>Fruit</h3>
+                          </figcaption>
+                        </figure>
+                      </a>
+                    </div>
+                    <div class="col-sm-4">
+                      <a href="#">
+                        <figure class="product-category-item">
+                          <div class="thumbnail">
+                            <img src="images/category-product/3.jpg" alt="" />
+                          </div>
+                          <figcaption>
+                            <h3>Meat</h3>
+                          </figcaption>
+                        </figure>
+                      </a>
+                    </div>
+                    <div class="col-sm-4">
+                      <a href="#">
+                        <figure class="product-category-item">
+                          <div class="thumbnail">
+                            <img src="images/category-product/3.jpg" alt="" />
+                          </div>
+                          <figcaption>
+                            <h3>Meat</h3>
+                          </figcaption>
+                        </figure>
+                      </a>
+                    </div>
+                    <div class="col-sm-4">
+                      <a href="#">
+                        <figure class="product-category-item">
+                          <div class="thumbnail">
+                            <img src="images/category-product/3.jpg" alt="" />
+                          </div>
+                          <figcaption>
+                            <h3>Meat</h3>
+                          </figcaption>
+                        </figure>
+                      </a>
+                    </div>
+                    <div class="col-sm-4">
+                      <a href="#">
+                        <figure class="product-category-item">
+                          <div class="thumbnail">
+                            <img src="images/category-product/3.jpg" alt="" />
+                          </div>
+                          <figcaption>
+                            <h3>Meat</h3>
+                          </figcaption>
+                        </figure>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-sm-4">
-                  <a href="#">
-                    <figure class="product-category-item">
-                      <div class="thumbnail">
-                        <img src="images/category-product/2.jpg" alt="" />
-                      </div>
-                      <figcaption>
-                        <h3>Fruit</h3>
-                      </figcaption>
-                    </figure>
-                  </a>
-                </div>
-                <div class="col-sm-4">
-                  <a href="#">
-                    <figure class="product-category-item">
-                      <div class="thumbnail">
-                        <img src="images/category-product/3.jpg" alt="" />
-                      </div>
-                      <figcaption>
-                        <h3>Meat</h3>
-                      </figcaption>
-                    </figure>
-                  </a>
-                </div>
+
+                <style>
+                  .product-category-marquee {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    position: relative;
+                  }
+
+                  .marquee-content {
+                    display: inline-flex;
+                    animation: marquee 20s linear infinite;
+                    -webkit-text-fill-color: inherit;
+                    will-change: transform;
+                  }
+
+                  .marquee-content::before {
+                    content: attr(data-content);
+                    position: absolute;
+                    white-space: nowrap;
+                    left: 100%;
+                    top: 0;
+                  }
+
+                  .product-category-marquee:hover .marquee-content {
+                    animation-play-state: paused;
+                  }
+
+                  .marquee-content .col-sm-4 {
+                    display: inline-block;
+                    margin-right: 60px;
+                  }
+
+                  @keyframes marquee {
+                    from {
+                      transform: translateX(100%);
+                    }
+                    to {
+                      transform: translateX(-100%);
+                    }
+                  }
+                </style>
               </div>
             </div>
           </div>
@@ -174,7 +255,6 @@
                       <h3>
                         <a class="product-name" href="product-detail.html">Salad</a>
                       </h3>
-                      <span class="price">$2.00</span>
                     </figcaption>
                   </div>
                 </div>
@@ -209,7 +289,6 @@
                       <h3>
                         <a class="product-name" href="product-detail.html">Bean</a>
                       </h3>
-                      <span class="price">$3.20</span>
                     </figcaption>
                   </div>
                 </div>
@@ -244,7 +323,6 @@
                       <h3>
                         <a class="product-name" href="product-detail.html">Spinach</a>
                       </h3>
-                      <span class="price">$3.10</span>
                     </figcaption>
                   </div>
                 </div>
@@ -279,7 +357,6 @@
                       <h3>
                         <a class="product-name" href="product-detail.html">Lemon</a>
                       </h3>
-                      <span class="price">$1.10</span>
                     </figcaption>
                   </div>
                 </div>
@@ -314,7 +391,6 @@
                       <h3>
                         <a class="product-name" href="product-detail.html">Onion</a>
                       </h3>
-                      <span class="price">$2.00 </span>
                     </figcaption>
                   </div>
                 </div>
@@ -414,134 +490,14 @@
       <a class="btn btn-brand pill icon-left" href="#">
         <i class="fa fa-instagram"></i>FOWLLOW US</a>
     </div>
-    <footer class="footer-style-1">
-      <div class="container">
-        <div class="row">
-          <div class="footer-style-1-inner">
-            <div class="widget-footer widget-text col-first col-small">
-              <a href="#">
-                <img class="logo-footer" src="images/logo.png" alt="Logo" style="max-width: 200px; height: auto; display: block; margin-bottom: 20px;" />
-              </a>
-              <div class="widget-link">
-                <ul>
-                  <li>
-                    <span class="lnr lnr-map-marker icon"></span>
-                    <span>1st floor, Office No 105, Ganraj Complex, 2nd Ln, Market Yard, Gultekadi, Pune, Maharashtra 411037</span>
-                  </li>
-                  <li>
-                    <span class="lnr lnr-phone-handset icon"></span>
-                    <a href="tel:+919766787045">+91 97667 87045</a>,
-                    <a href="tel:+919579419509">+91 9579419509</a>
-                  </li>
-                  <li>
-                    <span class="lnr lnr-envelope icon"></span>
-                    <a href="mailto:nandadipinternational@gmail.com">nandadipinternational@gmail.com</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="widget-footer widget-link col-second col-medium">
-              <div class="list-link">
-                <h4 class="h4 heading">SHOP</h4>
-                <ul>
-                  <li>
-                    <a href="#">Food</a>
-                  </li>
-                  <li>
-                    <a href="#">Farm</a>
-                  </li>
-                  <li>
-                    <a href="#">Health</a>
-                  </li>
-                  <li>
-                    <a href="#">Organic</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="list-link">
-                <h4 class="h4 heading">SUPPORT</h4>
-                <ul>
-                  <li>
-                    <a href="#">Contact Us</a>
-                  </li>
-                  <li>
-                    <a href="#">FAQ</a>
-                  </li>
-                  <li>
-                    <a href="#">Privacy Policy</a>
-                  </li>
-                  <li>
-                    <a href="#">Blog</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="list-link">
-                <h4 class="h4 heading">MY ACCOUNT</h4>
-                <ul>
-                  <li>
-                    <a href="#">Sign In</a>
-                  </li>
-                  <li>
-                    <a href="#">My Cart</a>
-                  </li>
-                  <li>
-                    <a href="#">My Wishlist</a>
-                  </li>
-                  <li>
-                    <a href="#">Check Out</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="widget-footer widget-newsletter-footer col-last col-small">
-              <h4 class="h4 heading">NEWSLETTER</h4>
-              <p>Subscribe now to get daily updates</p>
-              <form class="organic-form form-inline btn-add-on circle border">
-                <div class="form-group">
-                  <input class="form-control pill transparent" placeholder="Your Email..." type="email" />
-                  <button class="btn btn-brand circle" type="submit">
-                    <i class="fa fa-envelope-o"></i>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="copy-right style-1">
-        <div class="container">
-          <div class="row">
-            <div class="copy-right-inner">
-              <p>Copyright © 2017 Designed by AuThemes. All rights reserved.</p>
-              <div class="widget widget-footer widget-footer-creadit-card">
-                <ul class="list-unstyle">
-                  <li>
-                    <a href="#">
-                      <img src="images/icons/creadit-card-01.png" alt="creadit card" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/icons/creadit-card-02.png" alt="creadit card" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/icons/creadit-card-03.png" alt="creadit card" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/icons/creadit-card-04.png" alt="creadit card" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div id="footer-container"></div>
+      <script>
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+      </script>
     <div class="modal fade" id="quick-view-product" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg modal-quickview woocommerce" role="document">
         <div class="modal-content">
@@ -595,7 +551,6 @@
                   <div class="desc">
                     <div class="header-desc">
                       <h2 class="product-title">Sald</h2>
-                      <p class="price">$2.00</p>
                     </div>
                     <div class="body-desc">
                       <div class="woocommerce-product-details-short-description">
@@ -633,35 +588,6 @@
                     <p class="id">ID:
                       <a href="#">A203</a>
                     </p>
-                  </div>
-                  <div class="widget-social align-left">
-                    <ul>
-                      <li>
-                        <a class="facebook" data-toggle="tooltip" title="Facebook" href="https://www.facebook.com/authemes">
-                          <i class="fa fa-facebook"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="pinterest" data-toggle="tooltip" title="Pinterest" href="https://www.pinterest.com/authemes">
-                          <i class="fa fa-pinterest"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="twitter" data-toggle="tooltip" title="Twitter" href="https://www.twitter.com/authemes">
-                          <i class="fa fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="google-plus" data-toggle="tooltip" title="Google Plus" href="https://plus.google.com/authemes">
-                          <i class="fa fa-google-plus"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="instagram" data-toggle="tooltip" title="Instagram" href="https://instagram.com/authemes">
-                          <i class="fa fa-instagram"></i>
-                        </a>
-                      </li>
-                    </ul>
                   </div>
                 </div>
               </div>

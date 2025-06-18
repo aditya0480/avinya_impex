@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reusable Category Section</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Your CSS -->
+  <style>
+    /* Sample minimal styles */
+    .row { margin: 20px 0; }
+    .cate-thumbnail img { width: 150px; }
+    .inner-product-wrapper { display: flex; gap: 20px; flex-wrap: wrap; }
+    .img-wrapper img { width: 120px; height: auto; }
+    .product-style-1 { border: 1px solid #ddd; padding: 10px; width: 200px; }
+  </style>
+</head>
+<body>
+
+  <div id="category-sections"></div>
+
+  <script>
+    const categoryTemplate = (categoryName, categoryThumbnail, products) => {
+      return `
+        <div class="row">
+          <div class="product-category-item-5">
+            <div class="cate-thumbnail">
+              <img src="${categoryThumbnail}" alt="${categoryName} thumbnail">
+            </div>
+            <div class="outter-product-wrapper">
+              <h3 class="cate-title">${categoryName}</h3>
+              <div class="inner-product-wrapper">
+                ${products.map(product => `
+                  <figure class="item">
+                    <div class="product product-style-1">
+                      <div class="img-wrapper">
+                        <a href="${product.link}">
+                          <img class="img-responsive" src="${product.image}" alt="${product.name}">
+                        </a>
+                        <div class="product-control-wrapper bottom-right">
+                          <div class="wrapper-control-item">
+                            <a class="js-quick-view" href="#" data-toggle="modal" data-target="#quick-view-product">
+                              <span class="lnr lnr-eye">👁️</span>
+                            </a>
+                          </div>
+                          <div class="wrapper-control-item item-wish-list">
+                            <a class="js-wish-list" href="#">
+                              <span class="lnr lnr-heart">❤️</span>
+                            </a>
+                          </div>
+                          <div class="wrapper-control-item item-add-cart">
+                            <a class="animate-icon-cart" href="#">
+                              <span class="lnr lnr-cart">🛒</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <figcaption class="desc text-center">
+                        <h3><a class="product-name" href="${product.link}">${product.name}</a></h3>
+                        <span class="price">${product.price}</span>
+                      </figcaption>
+                    </div>
+                  </figure>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    };
+
+    // Category Data (add more categories as needed)
+    const categoryData = [
+      {
+        name: "Meat",
+        thumbnail: "images/product/cat-03.jpg",
+        products: [
+          { name: "Steak", image: "images/product/014.jpg", price: "$25.30", link: "product-detail.html" },
+          { name: "Pork", image: "images/product/015.jpg", price: "$12.54", link: "product-detail.html" },
+          { name: "Bacon", image: "images/product/016.jpg", price: "$4.80", link: "product-detail.html" }
+        ]
+      },
+      {
+        name: "Dry Fruits",
+        thumbnail: "images/product/cat-dryfruits.jpg",
+        products: [
+          { name: "Almonds", image: "images/product/021.jpg", price: "$10.00", link: "product-detail.html" },
+          { name: "Cashews", image: "images/product/022.jpg", price: "$8.00", link: "product-detail.html" },
+          { name: "Raisins", image: "images/product/023.jpg", price: "$6.20", link: "product-detail.html" }
+        ]
+      },
+      {
+        name: "Seafood",
+        thumbnail: "images/product/cat-seafood.jpg",
+        products: [
+          { name: "Shrimp", image: "images/product/031.jpg", price: "$18.90", link: "product-detail.html" },
+          { name: "Crab", image: "images/product/032.jpg", price: "$22.10", link: "product-detail.html" },
+          { name: "Salmon", image: "images/product/033.jpg", price: "$20.00", link: "product-detail.html" }
+        ]
+      }
+    ];
+
+    // Render all categories
+    const container = document.getElementById("category-sections");
+    categoryData.forEach(category => {
+      container.innerHTML += categoryTemplate(category.name, category.thumbnail, category.products);
+    });
+  </script>
+</body>
+</html>
